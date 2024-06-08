@@ -1,0 +1,121 @@
+<app-detalle 
+ [cliente]="clienteSeleccionado"
+ *ngIf="clienteSeleccionado">
+</app-detalle>
+
+
+
+
+
+
+
+
+
+
+
+<app-detalle 
+ [cliente]="clienteSeleccionado"
+ *ngIf="clienteSeleccionado">
+</app-detalle>
+
+
+
+<div class=" border-primary mb3">
+   
+   <div class="card-body text-primary">
+      <h5 class="card-title text-light">Listado de Inmuebles</h5>
+      <div class="">
+         <button type="button"style="width: 100px; height: 30px;"  routerLink='/Inmubles/form' class="btn btn-success fs-2">Crear</button>
+      </div>
+      <div *ngIf="clientes?.length==0" class="alert alert-info">
+         No hay registros en la base de datos!
+      </div>
+   
+         <tbody >
+             <div class="imuebles ">
+
+               <div class="imuebles container d-flex justify-content-center" *ngFor="let cliente of clientes">
+                  <div class="card" style="width: 27rem; " *ngIf="cliente.imueble==='PISO'|| cliente.imueble==='CASA' ">
+       
+                     <div class="card-body">
+                     <h2 class="card-title">{{cliente.imueble}}</h2>
+                     <p class="card-text">
+                     Superficie: {{cliente.superficie}}<br>
+                      Direccion:{{cliente.direccion}}<br>
+                      Baños: {{cliente.banos}}<br>
+                      Habitaciones:{{cliente.habitaciones}}<br>
+                      Cocinas:{{cliente.cocina}}<br>
+                      Zona:{{cliente.zona}}<br>
+                      Precio Venta:{{cliente.precio_venta}}<br>
+                      Precio Alquiler:{{cliente.precio_alquiler}}<br>
+                      Caracteristica:{{cliente.caracteristica}}<br>
+   
+                  </p>
+                  <a type="button" style="width: 100px;"class="btn btn-primary boton" (click)="abrilModal(cliente)">Ver</a>
+                  
+                  <a type="button"
+                  style="width: 100px;" (click)='delete(cliente)' class="btn btn-danger" >Elminar</a>
+                     </div>
+                   </div>
+   
+               </div>
+
+               <div class="imuebles container d-flex justify-content-center" *ngFor="let cliente of clientes">
+                  <div class="card" style="width: 27rem; " *ngIf="cliente.imueble==='VILLA'">
+       
+                     <div class="card-body">
+                     <h2 class="card-title">{{cliente.imueble}}</h2>
+                     <p class="card-text">
+                     Superficie: {{cliente.superficie}}<br>
+                      Direccion:{{cliente.direccion}}<br>
+                      Tamaño Parcela:{{cliente.tamano_par}}<br>
+                      Urbanisacion:{{cliente.urbanisacion}}<br>
+                      Baños: {{cliente.banos}}<br>
+                      Habitaciones:{{cliente.habitaciones}}<br>
+                      Cocinas:{{cliente.cocina}}<br>
+                      Zona:{{cliente.zona}}<br>
+                      Precio Venta:{{cliente.precio_venta}}<br>
+                      Precio Alquiler:{{cliente.precio_alquiler}}<br>
+                      Caracteristica:{{cliente.caracteristica}}<br>
+   
+                  </p>
+                  <a type="button" style="width: 100px;"class="btn btn-primary boton" (click)="abrilModal(cliente)">Ver</a>
+                  <a type="button" style="width: 100px;" (click)='delete(cliente)' class="btn btn-danger" >Elminar</a>
+                     </div>
+                   </div>
+
+                   
+   
+               </div>
+               <div class="imuebles  container d-flex justify-content-center" *ngFor="let cliente of clientes">
+                  <div class="card" style="width: 27rem; " *ngIf="cliente.imueble==='LOCAL'">
+       
+                     <div class="card-body">
+                     <h2 class="card-title">{{cliente.imueble}}</h2>
+                     <p class="card-text">
+                     Superficie: {{cliente.superficie}}<br>
+                      Direccion:{{cliente.direccion}}<br>
+                      Zona: {{cliente.zona}}<br>
+                      Puertas De Entrada:{{cliente.puertas_entrada}}<br>
+                      Diafono: {{cliente.diafono}}<br>
+                      Acondicionado: {{cliente.acondicionado}}<br>
+                      Precio Venta: {{cliente.precio_venta}}<br>
+                      Precio Alquiler: {{cliente.precio_alquiler}}<br>
+   
+                  </p>
+                  <a type="button" style="width: 100px;" class="btn btn-primary boton" (click)="abrilModal(cliente)">Ver</a>
+                  <a type="button" style="width: 100px;" (click)='delete(cliente)' class="btn btn-danger" >Elminar</a>
+                     </div>
+                   </div>
+   
+               </div>
+               
+             </div>
+
+
+           
+         </tbody>
+     
+
+   </div>
+</div>

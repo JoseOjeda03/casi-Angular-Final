@@ -1,0 +1,319 @@
+<ul class="alert alert-danger" *ngIf="errores.length > 0">
+  <li *ngFor="let err of errores">
+    {{ err }}
+  </li>
+</ul>
+<div class="card bg-dark text-white my-2" style="width: 50%; margin: auto auto;">
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body">
+    <form #clienteForm="ngForm">
+      <div class="form-group row">
+        <label for="nombre" class="col-form-label colm-sm-2">Imueble</label>
+        
+        <select  class="form-control fs-4 text" [(ngModel)]="cliente.imueble" name="imueble"
+        style="width: 300px;">
+
+          <option value="VILLA">VILLA</option>
+          <option value="CASA">CASA</option>
+          <option value="PISO">PISO</option>
+          <option value="LOCAL">LOCAL</option>
+        </select>
+        
+      </div>
+      <div class="form-group row">
+        <label for="apellido" class="col-form-label colm-sm-2">Superficie</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.superficie" name="apellido"
+            style="display:inline; width:300px;" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-form-label colm-sm-2">Direccion</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.direccion" name="direccion"
+            style="display:inline; width:300px;" required>
+        </div>
+      </div>
+
+      <div *ngIf="cliente.imueble==='PISO'|| cliente.imueble==='CASA' ">
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Zona </label>
+          <div class="col-sm-6">
+            <select  class="form-control fs-4 text" [(ngModel)]="cliente.zona" name="zona"
+            style="width: 300px;">
+         
+              <option value="NORTE">NORTE</option>
+              <option value="SUR">SUR</option>
+              <option value="ESTE">ESTE</option>
+              <option value="OESTE">OESTE</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Baños</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.banos" name="banos"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Cocinas</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.cocina" name="cocina"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Habitaciones</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.habitaciones" name="habitaciones"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Caracteristica</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.caracteristica" name="caracteristica"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">LLaves lugar</label>
+          <div class="col-sm-6">
+            <select  class="form-control fs-4 text" [(ngModel)]="cliente.llaves_lugar" name="acondicionado"
+            style="width: 300px;">
+             
+              <option value="Oficcina centro">Oficcina centro</option>
+              <option value="Oficcina sur">Oficcina sur</option>
+              <option value="Oficcina norete">Oficcina norte</option>
+
+            </select>
+          </div>
+        </div>
+
+      
+
+      </div>
+
+      <div *ngIf="cliente.imueble==='VILLA' ">
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Tamaño Parcela</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.tamano_par" name="tamano_par"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Ubarnisacion</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.urbanisacion" name="urbanisacion"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Habitaciones</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text " [(ngModel)]="cliente.habitaciones" name="habitaciones"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Baños</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.banos" name="banos"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Cocinas</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.cocina" name="cocina"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Habitaciones</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.habitaciones" name="habitaciones"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Caracteristica</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.caracteristica" name="caracteristica"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">LLaves lugar</label>
+          <div class="col-sm-6">
+            <select  class="form-control fs-4 text" [(ngModel)]="cliente.llaves_lugar" name="acondicionado"
+            style="width: 300px;">
+             
+              <option value="Oficcina centro">Oficcina centro</option>
+              <option value="Oficcina sur">Oficcina sur</option>
+              <option value="Oficcina norete">Oficcina norte</option>
+
+            </select>
+          </div>
+        </div>
+
+      
+
+      </div>
+
+      <div *ngIf="cliente.imueble==='LOCAL' ">
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Zona </label>
+          <div class="col-sm-6">
+            <select  class="form-control fs-4 text" [(ngModel)]="cliente.zona" name="zona"
+            style="width: 300px;">
+              
+              <option value="NORTE">NORTE</option>
+              <option value="SUR">SUR</option>
+              <option value="ESTE">ESTE</option>
+              <option value="OESTE">OESTE</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Puertas</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.puertas_entrada" name="puertas_entrada"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Diafono</label>
+          <div class="col-sm-6">
+            <select  class="form-control fs-4 text" [(ngModel)]="cliente.diafono" name="diafono"
+            style="width: 300px;">
+             
+              <option value="SI">SI</option>
+              <option value="NO">NO</option>
+
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Acondicionado</label>
+          <div class="col-sm-6">
+            <select  class="form-control fs-4 text" [(ngModel)]="cliente.acondicionado" name="acondicionado"
+            style="width: 300px;">
+             
+              <option value="SI">SI</option>
+              <option value="NO">NO</option>
+
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">Caracteristica</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.caracteristica" name="caracteristica"
+              style="display:inline; width:300px;" required>
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <label for="email" class="col-form-label colm-sm-2">LLaves lugar</label>
+          <div class="col-sm-6">
+            <select  class="form-control fs-4 text" [(ngModel)]="cliente.llaves_lugar" name="acondicionado"
+            style="width: 300px;">
+             
+              <option value="Oficcina centro">Oficcina centro</option>
+              <option value="Oficcina sur">Oficcina sur</option>
+              <option value="Oficcina norete">Oficcina norte</option>
+
+            </select>
+          </div>
+        </div>
+
+      
+
+      </div>
+
+
+
+      <div class="form-group row">
+        <label for="email" class="col-form-label colm-sm-2">Nombre Propetario</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.Nombre_propetario" name="Nombre_propetario"
+            style="display:inline; width:300px;" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-form-label colm-sm-2">Telefono Propetario Propetario</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.telefono_propetario" name="telefono_propetario"
+            style="display:inline; width:300px;" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-form-label colm-sm-2">Precio Venta </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.precio_venta" name="precio_venta"
+            style="display:inline; width:300px;" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-form-label colm-sm-2">Precio Alquiler </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.precio_alquiler" name="precio_alquiler"
+            style="display:inline; width:300px;" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-form-label colm-sm-2">Referencia </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control fs-4 text" [(ngModel)]="cliente.ref" name="ref"
+            style="display:inline; width:300px;" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-form-label colm-sm-2">Disponible </label>
+        <div class="col-sm-6">
+          <select  class="form-control fs-4 text" [(ngModel)]="cliente.Disponible" name="acondicionado"
+          style="width: 300px;">
+           
+            <option value="true " selected>true</option>
+
+
+          </select>
+        </div>
+      </div>
+      
+ 
+
+
+
+
+      <div class="form-group my-3 row">
+        <div class="col-sm-6">
+          <a *ngIf="botonCrear" class="btn btn-primary fs-3 text" role="button" (click)='create()' >Crear</a>
+          <button *ngIf="!botonCrear" class="btn btn-primary " role="button" (click)='update()' [disabled]="!clienteForm.form.valid">Actulizar</button>
+          <button class="btn btn-danger m-2 fs-3 text" role="button" routerLink='/Inmubles'>Cancelar</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
